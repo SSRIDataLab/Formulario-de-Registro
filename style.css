@@ -1,0 +1,280 @@
+
+@import url("https://fonts.googleapis.com/css2?famuly=Poppins:wght@300;400;500;600&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px 15px 15px;
+    background: linear-gradient(to bottom, #433673, #177DA6, #0191a1, #177DA6, #433673);
+}
+
+.container{
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    background: #ffff;
+    padding: 10px 25px 25px 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+}
+/*.container .registro {
+    margin-top: 20px;
+}*/
+.registro .input-box {
+    width: 100%;
+    margin-top: 15px;
+}
+.input-box label {
+    color: #3a3a3a;
+    font-size: 15px; /*tamaño de letra*/
+}
+input::placeholder {
+    color: #808080;
+    opacity: 1; /* Asegura que el color se vea claramente en algunos navegadores */
+}
+
+.input-box input:hover, .select-box:hover, .input-box textarea:hover {
+    border-color: #bbb;
+}
+
+.registro .colum .input-box input::placeholder {
+    font-size: clamp(12px, 1.5vw, 16px); /* Se adapta entre 12px y 16px según el ancho */
+}
+.registro :where(.input-box input, .select-box, textarea) { 
+    position: relative;
+    height: 50px;
+    width: 100%; /*expande los elementos al tamaño maximo que deben ocupar*/
+    outline: none;
+    font-size: 1rem;
+    color: #808080;
+    font-weight: 500;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    padding: 0 6px;
+}
+.input-box input:focus,.input-box textarea:focus {
+    border: 2px solid #1497A6; /* Borde azul */
+    box-shadow: 0 0 8px #67568C; /* Resplandor azul */
+    outline: none; /* Evita el contorno predeterminado del navegador */
+}
+
+/* Ajustar la altura del textarea */
+.input-box textarea {
+    height: auto;
+    min-height: 100px;
+    padding: 10px;
+}
+
+.registro .form-section{
+    margin-top: 25px;
+}
+.registro .colum {
+    display: flex;
+    column-gap: 15px;
+}
+
+.select-box select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #757575;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.registro .btn-enviar{
+    height: 55px;
+    width: auto;
+    min-width: 100px;
+    color: #ffff;
+    font-size: 1rem;
+    border: none;
+    margin: 28px auto 0;
+    padding: 0 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background-color: rgb(148, 112, 233);
+    display: block; /*hace que el margin auto funcione y se coloque al centro*/
+}
+.registro .btn-enviar:hover{
+    
+    background-color: #614dac;
+}
+
+.registro .btn-add{
+    height: 55px;
+    width: 25%;
+    color: #ffff;
+    font-size: 1rem;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background-color: rgb(148, 112, 233);
+}
+.registro .btn-add:hover{
+    
+    background-color: #614dac;
+}
+
+.form-section h2 {
+    color: #433673;
+    border-bottom: 5px solid #1497A6;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.forma-item, .expe-item {
+    border-bottom: 2px dashed rgb(218, 214, 214); /* Línea punteada negra */
+    padding-bottom: 10px; /* Espaciado opcional */
+}
+
+
+/* Mejorar el aspecto del formulario */
+.form-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+/* Clases de ancho para uso general */
+.w-25 {
+    flex: 0 0 25%;
+    max-width: 23.2%;
+}
+
+.w-50 {
+    flex: 0 0 50%;
+    max-width: 48.5%;
+}
+
+.w-33 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+}
+.w-75 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+.hidden {
+    display: none !important;
+}
+
+
+/* Estilos para la ventana de confirmación */
+#confirmation {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: center;
+    max-width: 600px;
+    margin: 30px auto;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#confirmation h2 {
+    color: #433673;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+#confirmation p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+#confirmation #confirmation-name {
+    font-weight: 700;
+    color: #433673;
+}
+
+#confirmation #confirmation-id {
+    font-family: monospace;
+    background-color: #f5f5f5;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+}
+
+#confirmation button {
+    background-color: #433673;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+
+#confirmation button:hover {
+    background-color: #322955;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Añadir un icono de éxito (puedes usar un SVG actual si lo prefieres) */
+#confirmation::before {
+    content: '✓';
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 40px;
+    line-height: 70px;
+    border-radius: 50%;
+}
+
+/*----------------------------------------------------------*/
+/*Responsive*/
+@media screen and (max-width: 675px) {
+    .registro .colum {
+        flex-wrap: wrap;
+    }
+    .registro .colum .input-box {
+        width: 100%;
+    }
+    .registro .colum .input-box input::placeholder {
+        font-size: 16px; /* Tamaño más grande y fijo */
+    }
+    .w-25, .w-33, .w-50, .w-75  {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

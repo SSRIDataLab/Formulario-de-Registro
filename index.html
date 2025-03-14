@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de docentes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="registroForm" action="#" class="registro">
+
+            <!-- ID Único (oculto) -->
+            <input type="hidden" id="registro_id" name="registro_id">
+
+
+            <section class="form-section">
+                <h2>Datos Personales</h2>
+                <div class="input-box">
+                    <label for="nombre">Nombres*</label>
+                    <input type="text" id="nombre_0" name="nombre[]" placeholder="Ingrese nombre completo" required>
+                </div>
+                <div class="colum">
+                    <div class="input-box">
+                        <label for="apaterno">Apellido Paterno*</label>
+                        <input type="text" id="apaterno_0" name="apaterno[]" placeholder="Ingrese apellido paterno">
+                    </div>
+                    <div class="input-box">
+                        <label for="amaterno">Apellido Materno*</label>
+                        <input type="text" id="amaterno_0" name="amaterno[]" placeholder="Ingrese apellido materno">
+                    </div>
+                </div>
+                <div class="colum">
+                    <div class="input-box">
+                        <label for="tipodoc">Tipo de documento*</label>
+                        <div class="select-box">
+                            <select id="tipodoc_0" name="tipodoc[]" required>
+                                <option hidden>Seleccionar tipo</option>
+                                <option>DNI</option>
+                                <option>Carnet de extranjeria</option>
+                                <option>Pasaporte</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <label for="nrodoc">Documento de identidad*</label>
+                        <input type="text" id="nrodoc_0" name="nrodoc[]" placeholder="Ingrese nro de documento" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="nrotel">Nro de teléfono*</label>
+                        <input type="text" id="nrotel_0" name="nrotel[]" placeholder="Ingrese un nro telefonico" required>
+                    </div>
+                </div>
+                <div class="colum">
+                    <div class="input-box">
+                        <label for="correo">Correo*</label>
+                        <input type="email" id="correo_0" name="correo[]" placeholder="Ingrese un correo electrónico" required>
+                    </div>
+                    <div class="input-box w-33">
+                        <label for="fenac">Fecha de nacimiento*</label>
+                        <input type="date" id="fenac_0" name="fenac[]" required>
+                    </div>
+                </div>
+                <div class="colum">
+                    <div class="input-box">
+                        <label for="ciudad">Ciudad de nacimiento*</label>
+                        <input type="text" id="ciudad_0" name="ciudad[]" placeholder="Ingrese la ciudad de nacimiento" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="pais">País de nacimiento*</label>
+                        <input type="text" id="pais_0" name="pais[]" placeholder="Ingrese el país de nacimiento" required>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <label for="direccion">Dirección de residencia</label>
+                    <input type="text" id="direccion_0" name="direccion[]" placeholder="Ingrese su dirección actual" required>
+                </div>
+            </section>
+            <section class="form-section">
+                <h2>Formación Académica</h2>
+                <div class="forma-container" id="formacion-container">
+                    <div class="forma-item">
+                        <div class="colum">
+                            <div class="input-box w-33">
+                                <label for="grado">Grado Academico*</label>
+                                <div class="select-box">
+                                    <select class="form-select" id="grado_0" name="grado[]" required>
+                                        <option hidden>Seleccionar grado</option>
+                                        <option value="Bachiller">Bachiller</option>
+                                        <option value="Licenciatura">Licenciatura</option>
+                                        <option value="Maestría">Maestría</option>
+                                        <option value="Doctorado">Doctorado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <label for="institucion">Institución*</label>
+                                <input type="text" id="institucion_0" name="institucion[]" required>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label for="titulo">Título o descripción de grado obtenido*</label>
+                            <input type="text" id="titulo_0" name="titulo[]" required>
+                        </div>
+                        <div class="colum">
+                            <div class="input-box">
+                                <label for="paisgrado">Pais de grado obtenido*</label>
+                                <input type="text" id="paisgrado_0" name="paisgrado[]" required>
+                            </div>
+                            <div class="input-box">
+                                <label for="anioFinGrado">Año obtención de grado*</label>
+                                <input type="number" id="anioFinGrado_0" name="anioFinGrado[]" min="1950" max="2030" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="add-formacion" class="btn-add">Añadir Formación</button>
+            </section>
+
+            <section class="form-section">
+                <h2>Experiencia Laboral</h2>
+                <div class="expe-container" id="experiencia-container">
+                    <div class="expe-item">
+                        <div class="colum">
+                            <div class="input-box">
+                                <label for="puesto">Cargo/Puesto*</label>
+                                <input type="text" id="puesto_0" name="puesto[]" required>
+                            </div>
+                            <div class="input-box">
+                                <label for="paisPuesto">Pais*</label>
+                                <input type="text" id="paisPuesto_0" name="paisPuesto[]" required>
+                            </div>
+                        </div>
+                        <div class="colum">
+                            <div class="input-box">
+                                <label for="Empresa">Institución/Empresa*</label>
+                                <input type="text" id="Empresa_0" name="Empresa[]" required>
+                            </div>
+                            <div class="input-box w-25">
+                                <label for="anioInicioPuesto">Año Inicio*</label>
+                                <input type="month" id="anioInicioPuesto_0" name="anioInicioPuesto[]" required>
+                            </div>
+                            <div class="input-box w-25">
+                                <label for="anioFinPuesto">Año Fin*</label>
+                                <input type="month" id="anioFinPuesto_0" name="anioFinPuesto[]" required>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <label for="descripcionPuesto">Descripción de puesto*</label>
+                            <textarea id="descripcionPuesto_0" name="descripcionPuesto[]" rows="5" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="add-experiencia" class="btn-add">Añadir Experiencia</button>
+            </section>
+            <!--<section class="form-section"></section>
+            <section class="form-section"></section>
+            <section class="form-section"></section>
+            <section class="form-section"></section>-->
+            <button type="submit" id="submit-form" class="btn-enviar">Enviar</button>
+        </form>
+        <div id="confirmation" class="hidden">
+            <h2>¡Gracias por completar el formulario!</h2>
+            <p><span id="confirmation-name"></span>, tu información ha sido registrada correctamente.</p>
+            <!--<p>Tu información ha sido registrada correctamente.ID de registro: <span id="confirmation-id"></span></p>-->
+            <button id="new-form">Nuevo Formulario</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
